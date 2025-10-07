@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
+    <meta charset="UTF-8">
     <title>Meus Programas HTML</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+      .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 32px; border-radius: 10px; box-shadow: 0 2px 8px #0001; }
+      h1 { text-align: center; color: #222; }
+      ul { list-style: none; padding: 0; }
+      li { margin: 16px 0; }
+      a { text-decoration: none; color: #0066cc; font-size: 1.2em; }
+      a:hover { text-decoration: underline; }
+      .footer { text-align: center; color: #888; margin-top: 32px; font-size: 0.9em; }
+    </style>
   </head>
   <body>
-    <h1>Bem-vindo aos meus programas!</h1>
-    <ul id="lista-programas"></ul>
-    <script>
-      fetch('programas/programas.json')
-        .then(response => response.json())
-        .then(programas => {
-          const ul = document.getElementById('lista-programas');
-          programas.forEach(prog => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = 'programas/' + prog.arquivo;
-            a.textContent = prog.nome;
-            a.target = '_blank';
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-        });
-    </script>
-    <p>Clique em um programa para abrir!</p>
+    <div class="container">
+      <h1>Meus Programas HTML</h1>
+      <ul>
+        <li><a href="programas/Conversor CSV para XLSX/" target="_blank">Conversor CSV para XLSX</a></li>
+        <li><a href="programas/Gerador Código SN RN/" target="_blank">Gerador Código SN RN</a></li>
+        <!-- Para adicionar mais programas, basta colocar mais linhas assim: -->
+        <!-- <li><a href="programas/NOME DA PASTA/" target="_blank">NOME DO PROGRAMA</a></li> -->
+      </ul>
+      <p>Clique em um programa para abrir em uma nova aba.</p>
+    </div>
+    <div class="footer">
+      Página criada por TiagoBonato com ♥ e GitHub Pages
+    </div>
   </body>
 </html>
