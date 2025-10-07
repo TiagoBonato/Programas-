@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor CSV para Excel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2 class="title">Conversor de CSV para Excel</h2>
+      <p class="subtitle">Converta múltiplos arquivos CSV em um único arquivo Excel com múltiplas planilhas</p>
+    </div>
+    <div id="drop-zone" class="upload-section">
+      <label for="csvFiles" class="file-label">Selecionar Arquivos CSV</label>
+      <input type="file" id="csvFiles" accept=".csv" multiple />
+      <p class="drag-drop-info">ou arraste os arquivos aqui</p>
+    </div>
+    <div id="file-info" class="file-info"></div>
+    <div id="action-buttons" class="action-buttons" style="display:none;">
+      <button class="btn btn-clear" onclick="clearFiles()">Limpar Arquivos</button>
+      <button class="btn btn-download" onclick="downloadCombined()">Baixar Excel Único</button>
+      <button class="btn btn-download" onclick="downloadSeparate()">Baixar Arquivos Separados</button>
+    </div>
+    <div id="spinner" class="spinner" style="display:none;"></div>
+    <div id="preview" class="preview"></div>
+    <div id="status" class="status"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
