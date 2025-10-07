@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Meu primeiro site!</title>
+    <title>Meus Programas HTML</title>
   </head>
   <body>
-    <h1>Olá, mundo!</h1>
-    <p>Esse é o meu site no GitHub Pages.</p>
+    <h1>Bem-vindo aos meus programas!</h1>
+    <ul id="lista-programas"></ul>
+    <script>
+      fetch('programas/programas.json')
+        .then(response => response.json())
+        .then(programas => {
+          const ul = document.getElementById('lista-programas');
+          programas.forEach(prog => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = 'programas/' + prog.arquivo;
+            a.textContent = prog.nome;
+            a.target = '_blank';
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+        });
+    </script>
+    <p>Clique em um programa para abrir!</p>
   </body>
 </html>
